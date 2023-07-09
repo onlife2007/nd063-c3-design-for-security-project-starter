@@ -1,3 +1,9 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
+I had tried to run the brute force attack from the attack instance several times and waited for a day.
+Unfortunately, it does not show anything except one thing as in the picture and it does not related to brute force attach
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+GuardDuty may have detected the attack in a number of ways, including:
+- CloudTrail logging: by detect anomalous API calls.
+- Network traffic analysis: by detect anomalous patterns in networking
+- Machine learning: by detect anomalous behavior that may be indicative of an attack.

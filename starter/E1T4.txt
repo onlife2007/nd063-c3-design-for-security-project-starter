@@ -1,5 +1,14 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
+The security group WebAppSG that attach to the Web service instance allow many inbound rules that don't need.
+Example: 
+    Rule: allow all trafic from the internet
+
+Because the web app is placed behind the load balancer it should only allow traffic from load balancer on specific port
+In this case, allow port 5000 from ALB SG
 
 # Poor practice 2
+The InstanceProfileRole role assume by Web service instance and Attacker instance is allow all actions in S3 on all resources/buckets.
+
+We should only allow permission that the applicetion need (the least privilege). In this case it could be read only on the Free recipes bucket
